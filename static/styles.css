@@ -36,26 +36,6 @@ body {
     overflow-y: scroll;
 }
 
-
-.custom-select {
-    padding: 0.375rem 1.75rem 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    appearance: none;
-    background: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"%3E%3Cpath fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M2 0L0 2h4zm0 5L0 3h4z"/%3E%3C/svg%3E') no-repeat right 0.75rem center/8px 10px;
-}
-
-
-.select-box {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
 .title-box {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 5px 10px;
@@ -89,22 +69,7 @@ body {
     box-shadow: 0 2px 6px rgba(0,0,0,0.12);
 }
 
-:root {
-    /* Reduced, sensible default spacing so brand/nav don't drift to center
-       You asked for 71rem previously; that was extremely large and caused layout issues.
-       Use this small value and increase on wide screens with the media query below. */
-    --bs-navbar-brand-margin-end: 1.5rem;
-}
 
-.navbar-brand {
-    /* RTL-safe end margin */
-    margin-inline-end: var(--bs-navbar-brand-margin-end);
-    /* Fallback for older browsers */
-    margin-right: var(--bs-navbar-brand-margin-end);
-}
 
-/* Slightly larger spacing on very wide screens */
-@media (min-width: 1200px) {
-    :root { --bs-navbar-brand-margin-end: 3rem; }
-}
+
 
