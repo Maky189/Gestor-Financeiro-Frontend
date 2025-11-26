@@ -1,0 +1,232 @@
+:root {
+  --primary: #f7931a;     
+  --bg: #f4f4f4;          
+  --white: #ffffff;     
+  --text-dark: #333;     
+  --text-light: #666;     
+}
+
+
+* { 
+  margin: 0;              
+  padding: 0;             
+  box-sizing: border-box; 
+}
+
+body { 
+  font-family: Arial, sans-serif; 
+  background: var(--bg);           
+  padding-bottom: 20px; /* ====== ALTERADO: reduzido de 70px para 20px (não precisa mais de espaço para bottom nav) ====== */
+}
+
+
+.top-bar {
+  padding: 20px;                      
+  text-align: center;                   
+  background: var(--white);          
+  font-size: 20px;                       
+  font-weight: bold;                     
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+/* ============================================ */
+/* NOVA SEÇÃO: NAVEGAÇÃO SUPERIOR */
+/* ============================================ */
+.top-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--white);
+  padding: 10px 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.top-nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.top-nav .nav-item:hover {
+  color: var(--text-dark);
+  background: rgba(247, 147, 26, 0.1);
+  transform: translateY(0);
+}
+
+.top-nav .nav-item.active {
+  color: var(--primary);
+  font-weight: bold;
+  background: rgba(247, 147, 26, 0.1);
+  border-color: transparent;
+}
+
+.top-nav .nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 3px 3px 0 0;
+}
+
+.top-nav .nav-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.top-nav .nav-label {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+  .top-nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+  
+  .top-nav .nav-item {
+    padding: 10px 15px;
+    min-width: fit-content;
+  }
+  
+  .top-nav .nav-icon {
+    font-size: 20px;
+  }
+  
+  .top-nav .nav-label {
+    font-weight: bold;
+    font-size: 11px;
+  }
+}
+/* ============================================ */
+
+
+.summary-card,
+.chart-card,
+.list-card {
+  background: var(--white);      
+  margin: 15px;                       
+  padding: 20px;                      
+  border-radius: 15px;                  
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+
+.summary-item,
+.expense-item {
+  display: flex;            
+  justify-content: space-between;   
+  margin: 12px 0;                 
+  font-size: 16px;                  
+}
+
+
+/* ============================================ */
+/* NAVEGAÇÃO BOTTOM COMENTADA (não é mais necessária) */
+/* ============================================ */
+/*
+.bottom-nav {
+  position: fixed;                
+  bottom: 0; left: 0;                   
+  width: 100%;                        
+  background: var(--white);        
+  display: flex;                 
+  justify-content: space-around;       
+  padding: 10px 0;                       
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+.bottom-nav a {
+  text-decoration: none;        
+  color: var(--text-light);       
+  font-size: 14px;                  
+}
+
+.bottom-nav .active {
+  color: var(--primary);      
+  font-weight: bold;              
+}
+*/
+/* ============================================ */
+
+
+.chart-container {
+  width: 400px;        
+  height: 400px;     
+  margin: 0 auto;      
+}
+
+
+.nav-item, .menu-item, .btn-nav, .sidebar a, nav a {
+  display: inline-flex;                   
+  align-items: center;                
+  justify-content: center;            
+  gap: 8px;                          
+  padding: 10px 14px;                   
+  border-radius: 10px;                   
+  border: 1px solid rgba(0,0,0,0.08);    
+  background: rgba(255,255,255,0.6);      
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  backdrop-filter: blur(4px);          
+  -webkit-backdrop-filter: blur(4px);    
+  transition: transform .12s ease, box-shadow .12s ease; 
+  color: inherit;                     
+  text-decoration: none;             
+}
+
+
+.nav-item:hover, .nav-item:focus, .sidebar a:hover {
+  transform: translateY(-3px);            
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+}
+
+
+.nav-item.active, .sidebar a.active {
+  border-color: rgba(0,123,255,0.18);    
+  background: rgba(0,123,255,0.06);       
+}
+
+/* Estilos básicos para centralizar o formulário de login */
+        .login {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-login {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            width: 320px;
+            padding: 20px;
+            border: 1px solid #ddd; /* só para visualização */
+            border-radius: 6px;
+        }
+
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }

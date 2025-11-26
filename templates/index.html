@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Dashboard</title>
+<link rel="stylesheet" href="../styles/styles.css">
+
+</head>
+<body>
+<header class="top-bar">
+  <h1>Dashboard</h1>
+</header>
+
+<!-- ============================================ -->
+<!-- NAVEGAÇÃO MOVIDA PARA CIMA (LOGO APÓS HEADER) -->
+<!-- ============================================ -->
+<nav class="top-nav">
+  <a href="index.html" class="nav-item active">
+    <span class="nav-icon">📊</span>
+    <span class="nav-label">Dashboard</span>
+  </a>
+  <a href="despesas.html" class="nav-item">
+    <span class="nav-icon">💸</span>
+    <span class="nav-label">Despesas</span>
+  </a>
+  <a href="categorias.html" class="nav-item">
+    <span class="nav-icon">📁</span>
+    <span class="nav-label">Categorias</span>
+  </a>
+  <a href="historico.html" class="nav-item">
+    <span class="nav-icon">📋</span>
+    <span class="nav-label">Histórico</span>
+  </a>
+  <a href="config.html" class="nav-item">
+    <span class="nav-icon">⚙️</span>
+    <span class="nav-label">Configurações</span>
+  </a>
+</nav>
+<!-- ============================================ -->
+
+<section class="summary-card">
+  <h2>Outubro 2025</h2>
+  
+  <div class="summary-item">
+    <span>Despesa Total </span>
+    <strong> 5000esc</strong>
+  
+  </div>
+  <div class="summary-item">
+    <span>Orçamento restante </span>
+    <strong>3000esc / 7000esc</strong>
+  </div>
+</section>
+<div class="chart-container">
+    <canvas id="pieChart"></canvas>
+</div>
+
+<!-- ============================================ -->
+<!-- NAVEGAÇÃO BOTTOM REMOVIDA (comentada para backup) -->
+<!-- 
+<nav class="bottom-nav">
+  <a href="index.html" class="active">Dashboard</a>
+  <a href="despesas.html">Despesas</a>
+  <a href="historico.html">Histórico</a>
+  <a href="categorias.html">Categorias</a>
+  <a href="config.html">Configurações</a>
+</nav>
+-->
+<!-- ============================================ -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../scripts/graficos.js"></script>
+</body>
+</html>
