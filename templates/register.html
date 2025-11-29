@@ -10,78 +10,45 @@
 
     <title>Gestor Financeiro - Cadastro</title>
 
-    <style>
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        main {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .register-box {
-            width: 360px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-        }
-
-        .register-box h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: normal;
-        }
-
-        .error-msg {
-            color: red;
-            font-size: 14px;
-            display: none;
-        }
-
-        .success-msg {
-            color: green;
-            font-size: 14px;
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles/styles.css">
 
 </head>
 
-<body>
+<body class="login">
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container-fluid px-3 px-md-4">
+    <header class="top-bar">
+            <h1>Gestor Financeiro</h1>
+        </header>
 
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="/static/logo.png" alt="Gestor logo" width="36" height="36" class="me-2 rounded">
-                Gestor Financeiro
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-md-0 align-items-md-center">
-                    <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Transações</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Relatórios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
-                    <li class="nav-item d-none d-md-block"><a class="nav-link" href="#">Sair</a></li>
-                </ul>
-            </div>
-
-        </div>
-    </nav>
+        <!-- ============================================ -->
+        <!-- NAVEGAÇÃO MOVIDA PARA CIMA (LOGO APÓS HEADER) -->
+        <!-- ============================================ -->
+        <nav class="top-nav">
+        <a href="index.html" class="nav-item active">
+            <span class="nav-icon">📊</span>
+            <span class="nav-label">Dashboard</span>
+        </a>
+        <a href="despesas.html" class="nav-item">
+            <span class="nav-icon">💸</span>
+            <span class="nav-label">Despesas</span>
+        </a>
+        <a href="categorias.html" class="nav-item">
+            <span class="nav-icon">📁</span>
+            <span class="nav-label">Categorias</span>
+        </a>
+        <a href="historico.html" class="nav-item">
+            <span class="nav-icon">📋</span>
+            <span class="nav-label">Histórico</span>
+        </a>
+        <a href="config.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">Configurações</span>
+        </a>
+        </nav>
 
     <!-- FORMULÁRIO -->
-    <main>
+    <main class="register-main">
         <div class="register-box">
             <h2>Criar Conta</h2>
 
