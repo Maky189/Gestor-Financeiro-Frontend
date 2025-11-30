@@ -17,6 +17,7 @@ body {
   font-family: Arial, sans-serif; 
   background: var(--bg);           
   padding-bottom: 20px; /* ====== ALTERADO: reduzido de 70px para 20px (não precisa mais de espaço para bottom nav) ====== */
+  overflow-y: auto;
 }
 
 
@@ -27,6 +28,9 @@ body {
   font-size: 20px;                       
   font-weight: bold;                     
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 /* ============================================ */
@@ -41,6 +45,9 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   gap: 30px;
   flex-wrap: wrap;
+  position: sticky;
+  top: 60px;
+  z-index: 99;
 }
 
 .top-nav .nav-item {
@@ -172,6 +179,28 @@ body {
   width: 400px;        
   height: 400px;     
   margin: 0 auto;      
+}
+
+.chart-container-large {
+  width: 600px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.chart-section {
+  background: var(--white);
+  margin: 30px 15px;
+  padding: 25px 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.chart-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 20px;
 }
 
 

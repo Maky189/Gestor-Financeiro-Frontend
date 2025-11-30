@@ -50,6 +50,50 @@
         <main class="container py-5 text-center">
             BLOCO PRINCIPAL -- ADICIONAR GRAFICOS, FINANCAS, TABELAS ETC
             COLOCAR ICONES EM CADA NAV ITEM
+
+            <section class="summary-card">
+  <h2>Outubro 2025</h2>
+  
+  <div class="summary-item">
+    <span>Despesa Total </span>
+    <strong> 5000esc</strong>
+  
+  </div>
+  <div class="summary-item">
+    <span>Orçamento restante </span>
+    <strong>3000esc / 7000esc</strong>
+  </div>
+</section>
+
+<!--Secção do gráfico de pizza-->
+<div class="chart-section">
+  <h3 class="chart-title">Despesas por Categoria</h3>
+  <div class="chart-container">
+    <canvas id="pieChart"></canvas>
+  </div>
+</div>
+
+<!--Secção do gráfico de barras-->
+<div class="chart-section">
+  <h3 class="chart-title">Comparação Mensal de Gastos</h3>
+  <div class="chart-container-large">
+    <canvas id="barChart"></canvas>
+  </div>
+</div>
+
+<!--Seção do gráfico de linhas -->
+<div class="chart-section">
+  <h3 class="chart-title">Evolução de Despesas ao Longo do Tempo</h3>
+  <div class="chart-container-large">
+    <canvas id="lineChart"></canvas>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../scripts/graficos.js"></script>
+</body>
+</html>
+
         </main>
 
         <footer class="mb-5">
