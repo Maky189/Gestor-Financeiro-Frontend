@@ -16,8 +16,12 @@
 body { 
   font-family: Arial, sans-serif; 
   background: var(--bg);           
-  padding-bottom: 20px; /* ====== ALTERADO: reduzido de 70px para 20px (não precisa mais de espaço para bottom nav) ====== */
-  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 
@@ -28,9 +32,9 @@ body {
   font-size: 20px;                       
   font-weight: bold;                     
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 100;
+  flex-shrink: 0;
 }
 
 /* ============================================ */
@@ -45,9 +49,9 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   gap: 30px;
   flex-wrap: wrap;
-  position: sticky;
-  top: 60px;
-  z-index: 99;
+  position: relative;
+  z-index: 100;
+  flex-shrink: 0;
 }
 
 .top-nav .nav-item {
@@ -125,6 +129,11 @@ body {
 }
 /* ============================================ */
 
+main {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
 .summary-card,
 .chart-card,
