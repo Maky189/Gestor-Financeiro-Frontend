@@ -23,7 +23,7 @@
         <!-- NAVEGAÇÃO MOVIDA PARA CIMA (LOGO APÓS HEADER) -->
         <!-- ============================================ -->
         <nav class="top-nav">
-        <a href="index.html" class="nav-item active">
+        <a href="index.html" class="nav-item">
             <span class="nav-icon">📊</span>
             <span class="nav-label">Dashboard</span>
         </a>
@@ -35,7 +35,7 @@
             <span class="nav-icon">📁</span>
             <span class="nav-label">Categorias</span>
         </a>
-        <a href="historico.html" class="nav-item">
+        <a href="historico.html" class="nav-item active">
             <span class="nav-icon">📋</span>
             <span class="nav-label">Histórico</span>
         </a>
@@ -46,25 +46,23 @@
         </nav>
         <!-- ============================================ -->
             
-
-        <footer class="mb-5">
-            <form action="https://validator.w3.org/check" class="text-center" enctype="multipart/form-data" method="post" target="_blank">
-                <input name="doctype" type="hidden" value="HTML5">
-                <input name="fragment" type="hidden">
-            </form>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
+        
+       <section style="padding: 20px;">
+        <h2>Histórico de Transações</h2>
+         <table border="1" width="100%" cellspacing="0" cellpadding="8">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Categoria</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
                 
-                    const html = '<!DOCTYPE ' +
-                    document.doctype.name +
-                    (document.doctype.publicId ? ' PUBLIC "' + document.doctype.publicId + '"' : '') +
-                    (!document.doctype.publicId && document.doctype.systemId ? ' SYSTEM' : '') +
-                    (document.doctype.systemId ? ' "' + document.doctype.systemId + '"' : '') +
-                    '>\n' + document.documentElement.outerHTML;
-                    document.querySelector('form[action="https://validator.w3.org/check"] > input[name="fragment"]').value = html;
-                });
-            </script>
-        </footer>
+            </tbody>
+         </table>
+       </section>
 
     </body>
 
