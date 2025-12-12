@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Gestor Financeiro - Cadastro</title>
+
+    <link rel="stylesheet" href="../styles/styles.css">
+
+</head>
+
+<body class="login">
+
+    <!-- NAVBAR -->
+    <header class="top-bar">
+            <h1>Gestor Financeiro</h1>
+        </header>
+
+        <!-- ============================================ -->
+        <!-- NAVEGAÇÃO MOVIDA PARA CIMA (LOGO APÓS HEADER) -->
+        <!-- ============================================ -->
+        <nav class="top-nav">
+        <a href="index.html" class="nav-item active">
+            <span class="nav-icon">📊</span>
+            <span class="nav-label">Dashboard</span>
+        </a>
+        <a href="despesas.html" class="nav-item">
+            <span class="nav-icon">💸</span>
+            <span class="nav-label">Despesas</span>
+        </a>
+        <a href="categorias.html" class="nav-item">
+            <span class="nav-icon">📁</span>
+            <span class="nav-label">Categorias</span>
+        </a>
+        <a href="historico.html" class="nav-item">
+            <span class="nav-icon">📋</span>
+            <span class="nav-label">Histórico</span>
+        </a>
+        <a href="config.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">Configurações</span>
+        </a>
+        </nav>
+
+    <!-- FORMULÁRIO -->
+    <main class="register-main">
+        <div class="register-box">
+            <h2>Criar Conta</h2>
+
+            <form id="registerForm" action="#" method="POST">
+
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Nome completo" required>
+                </div>
+
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Email" required>
+                </div>
+
+                <div class="mb-3">
+                    <input type="password" id="senha" class="form-control" placeholder="Senha" required>
+                </div>
+
+                <div class="mb-3">
+                    <input type="password" id="confirmarSenha" class="form-control" placeholder="Confirmar senha" required>
+                </div>
+
+                <!-- Mensagens -->
+                <p id="erroSenhas" class="error-msg">⚠️ As senhas não coincidem.</p>
+                <p id="sucessoCadastro" class="success-msg">✔️ Conta criada com sucesso!</p>
+
+                <button type="submit" class="btn btn-dark w-100">Cadastrar</button>
+
+                <div class="text-center mt-2">
+                    <a href="login.html">Já tenho conta</a>
+                </div>
+
+            </form>
+
+        </div>
+    </main>
+
+    <!-- VALIDAÇÕES -->
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // impede envio real
+
+            const senha = document.getElementById("senha").value;
+            const confirmar = document.getElementById("confirmarSenha").value;
+
+            const erroMsg = document.getElementById("erroSenhas");
+            const sucessoMsg = document.getElementById("sucessoCadastro");
+
+            if (senha !== confirmar) {
+                erroMsg.style.display = "block";
+                sucessoMsg.style.display = "none";
+                return;
+            }
+
+            // senhas OK
+            erroMsg.style.display = "none";
+            sucessoMsg.style.display = "block";
+
+            // limpar campos (opcional)
+            // document.getElementById("registerForm").reset();
+        });
+    </script>
+
+</body>
+</html>
+
