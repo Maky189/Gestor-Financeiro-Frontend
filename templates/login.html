@@ -17,57 +17,50 @@
 
 <body class="login">
 
-    <!-- NAVBAR DO TEU COLEGA -->
-     <header class="top-bar">
-            <h1>Gestor Financeiro</h1>
-        </header>
-
-        <!-- ============================================ -->
-        <!-- NAVEGAÇÃO MOVIDA PARA CIMA (LOGO APÓS HEADER) -->
-        <!-- ============================================ -->
-        <nav class="top-nav">
-        <a href="index.html" class="nav-item active">
-            <span class="nav-icon">📊</span>
-            <span class="nav-label">Dashboard</span>
-        </a>
-        <a href="despesas.html" class="nav-item">
-            <span class="nav-icon">💸</span>
-            <span class="nav-label">Despesas</span>
-        </a>
-        <a href="categorias.html" class="nav-item">
-            <span class="nav-icon">📁</span>
-            <span class="nav-label">Categorias</span>
-        </a>
-        <a href="historico.html" class="nav-item">
-            <span class="nav-icon">📋</span>
-            <span class="nav-label">Histórico</span>
-        </a>
-        <a href="config.html" class="nav-item">
-            <span class="nav-icon">⚙️</span>
-            <span class="nav-label">Configurações</span>
-        </a>
-        </nav>
-        <!-- ============================================ -->
+    <!-- bruno: Navbar removida conforme solicitado -->
     
     <!-- ÁREA CENTRAL COM O FORMULÁRIO DE LOGIN -->
     <main class="main-login">
         <div class="login-box">
+            <!-- bruno: Adicionado título principal do sistema -->
+            <div class="login-header">
+                <h1>Gestor Financeiro</h1>
+                <p class="login-subtitle">Bem-vindo de volta!</p>
+            </div>
+
             <h2>Login</h2>
 
             <form action="#" method="POST">
 
                 <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Email ou nome de usuário" required>
+                    <!-- bruno: Adicionado ícone ao input -->
+                    <div class="input-with-icon">
+                        <span class="input-icon">👤</span>
+                        <input type="text" class="form-control" placeholder="Email ou nome de usuário" required>
+                    </div>
                 </div>
 
                 <div class="mb-3">
-                    <input type="password" class="form-control" placeholder="Senha" required>
+                    <!-- bruno: Adicionado ícone ao input -->
+                    <div class="input-with-icon">
+                        <span class="input-icon">🔒</span>
+                        <input type="password" class="form-control" placeholder="Senha" required>
+                    </div>
                 </div>
 
-                <button type="submit" class="btn btn-dark w-100">Entrar</button>
+                <button type="submit" class="btn btn-primary-custom w-100">Entrar</button>
 
-                <div class="text-center mt-2">
-                    <a href="#">Esqueci a senha</a>
+                <div class="text-center mt-3">
+                    <a href="#" class="link-custom">Esqueci a senha</a>
+                </div>
+
+                <!-- bruno: Adicionado separador e link para cadastro -->
+                <div class="divider-text">
+                    <span>ou</span>
+                </div>
+
+                <div class="text-center mt-3">
+                    <p class="signup-text">Não tem uma conta? <a href="register.html" class="link-custom-bold">Cadastre-se</a></p>
                 </div>
 
             </form>

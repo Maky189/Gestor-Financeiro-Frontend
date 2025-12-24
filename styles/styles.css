@@ -213,64 +213,152 @@ main {
   background: rgba(0,123,255,0.06);       
 }
 
-/* Estilos básicos para centralizar o formulário de login */
-        .login {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+/* ============================================ */
+/* bruno: ESTILOS DE LOGIN E REGISTO ATUALIZADOS */
+/* ============================================ */
 
-        .main-login {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+/* bruno: Fundo da página de login e registo */
+.login {
+    background-color: var(--bg) !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-        .login-box {
-            width: 320px;
-            padding: 20px;
-            border: 1px solid #ddd; /* só para visualização */
-            border-radius: 6px;
-        }
+/* bruno: Ajuste no container principal para centralizar */
+.main-login, .register-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 
-        .login-box h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: normal;
-        }
+/* bruno: Box de Login e Registo (Seguindo o padrão do modal-box) */
+.login-box, .register-box {
+    background: var(--white);
+    width: 100%;
+    max-width: 400px; /* bruno: largura ajustada */
+    padding: 40px 30px;
+    border-radius: 15px; /* bruno: padrão do dashboard */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1); /* bruno: sombra suave */
+    border: none !important; /* bruno: removida borda cinza antiga */
+}
 
-        .register-box {
-            width: 360px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-        }
+/* bruno: Títulos dentro das boxes */
+.login-box h2, .register-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
 
-        .register-box h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: normal;
-        }
+/* bruno: Estilização dos inputs para combinar com o modal */
+.input-with-icon {
+    position: relative;
+    margin-bottom: 15px;
+}
 
-        .error-msg {
-            color: red;
-            font-size: 14px;
-            display: none;
-        }
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+}
 
-        .success-msg {
-            color: green;
-            font-size: 14px;
-            display: none;
-        }
+.input-with-icon .form-control {
+    padding-left: 40px; /* bruno: espaço para o ícone */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    height: 48px;
+    transition: border-color 0.3s;
+}
 
-        .register-main {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.input-with-icon .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: none;
+    outline: none;
+}
+
+/* bruno: Botão primário com a cor laranja do Gestor */
+.btn-primary-custom {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-primary-custom:hover {
+    background: #e68210;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(247, 147, 26, 0.3);
+}
+
+/* bruno: Links e textos de ajuda */
+.link-custom {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.link-custom-bold {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link-custom-bold:hover {
+    text-decoration: underline;
+}
+
+/* bruno: Separador "ou" */
+.divider-text {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.divider-text::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    left: 0;
+    top: 50%;
+    z-index: 1;
+}
+
+.divider-text span {
+    background: var(--white);
+    padding: 0 10px;
+    position: relative;
+    z-index: 2;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+/* bruno: Cabeçalho com o nome do sistema */
+.login-header, .register-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h1, .register-header h1 {
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-subtitle, .register-subtitle {
+    color: var(--text-light);
+    font-size: 14px;
+}
 
 /*Botão flutuante*/
 .floating-btn {
