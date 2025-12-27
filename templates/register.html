@@ -14,14 +14,12 @@
 
 </head>
 
-<body class="login">
 
-    <!-- bruno: Navbar removida conforme solicitado -->
+  
 
-    <!-- FORMULÁRIO -->
+    
     <main class="register-main">
         <div class="register-box">
-            <!-- bruno: Adicionado título principal do sistema -->
             <div class="register-header">
                 <h1>Gestor Financeiro</h1>
                 <p class="register-subtitle">Comece a gerenciar suas finanças!</p>
@@ -32,15 +30,20 @@
             <form id="registerForm" action="#" method="POST">
 
                 <div class="mb-3">
-                    <!-- bruno: Adicionado ícone ao input -->
                     <div class="input-with-icon">
                         <span class="input-icon">👤</span>
-                        <input type="text" class="form-control" placeholder="Nome completo" required>
+                        <input type="text" class="form-control" placeholder="Nome" required>
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <!-- bruno: Adicionado ícone ao input -->
+                    <div class="input-with-icon">
+                        <span class="input-icon">✨</span>
+                        <input type="text" class="form-control" placeholder="Apelido" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
                     <div class="input-with-icon">
                         <span class="input-icon">📧</span>
                         <input type="email" class="form-control" placeholder="Email" required>
@@ -48,7 +51,20 @@
                 </div>
 
                 <div class="mb-3">
-                    <!-- bruno: Adicionado ícone ao input -->
+                    <div class="input-with-icon">
+                        <span class="input-icon">📱</span>
+                        <input type="tel" class="form-control" placeholder="Telefone" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="input-with-icon">
+                        <span class="input-icon">🏠</span>
+                        <input type="text" class="form-control" placeholder="Endereço" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
                     <div class="input-with-icon">
                         <span class="input-icon">🔒</span>
                         <input type="password" id="senha" class="form-control" placeholder="Senha" required>
@@ -56,20 +72,17 @@
                 </div>
 
                 <div class="mb-3">
-                    <!-- bruno: Adicionado ícone ao input -->
                     <div class="input-with-icon">
                         <span class="input-icon">✓</span>
                         <input type="password" id="confirmarSenha" class="form-control" placeholder="Confirmar senha" required>
                     </div>
                 </div>
 
-                <!-- Mensagens -->
                 <p id="erroSenhas" class="error-msg">⚠️ As senhas não coincidem.</p>
                 <p id="sucessoCadastro" class="success-msg">✔️ Conta criada com sucesso!</p>
 
                 <button type="submit" class="btn btn-primary-custom w-100">Cadastrar</button>
 
-                <!-- bruno: Adicionado separador e link para login -->
                 <div class="divider-text">
                     <span>ou</span>
                 </div>

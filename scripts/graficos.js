@@ -31,13 +31,13 @@ if (barCtx) {
         type: 'bar', 
         
         data: {
-            labels: ['Restaurante', 'Entretenimento', 'Saúde', 'Comida'], 
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'], 
             
             datasets: [{
-                label: 'Gastos (esc)', 
-                data: [171, 149, 68, 58], 
-                backgroundColor: ['#ff8c42', '#ff6363', '#36a2eb', '#8bc34a'],
-                borderColor: ['#e67a2e', '#e54e4e', '#2890d4', '#7ab83f'], 
+                label: 'Gastos Totais', 
+                data: [310, 355, 393, 398, 425, 423, 442, 447, 441, 446, 415, 485], 
+                backgroundColor: '#ff8c42',
+                borderColor: '#e67a2e', 
                 borderWidth: 2 
             }]
         },
@@ -58,6 +58,22 @@ if (barCtx) {
             plugins: {
                 legend: {
                     display: false 
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                    titleColor: '#ffffff',
+                    bodyColor: '#ffffff',
+                    padding: 12,
+                    cornerRadius: 8,
+                    displayColors: false,
+                    callbacks: {
+                        title: function(context) {
+                            return context[0].label;
+                        },
+                        label: function(context) {
+                            return 'Gasto: ' + context.parsed.y + ' esc';
+                        }
+                    }
                 }
             }
         }
@@ -72,12 +88,12 @@ if (lineCtx) {
         type: 'line', 
         
         data: {
-            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro'], 
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'], 
             
             datasets: [
                 {
                     label: 'Restaurante', 
-                    data: [120, 145, 160, 155, 171, 165, 180, 175, 168, 171], 
+                    data: [120, 145, 160, 155, 171, 165, 180, 175, 168, 171, 135, 190], 
                     borderColor: '#ff8c42', 
                     backgroundColor: 'rgba(255, 140, 66, 0.1)', 
                     tension: 0.4, 
@@ -85,7 +101,7 @@ if (lineCtx) {
                 },
                 {
                     label: 'Entretenimento', 
-                    data: [100, 110, 125, 135, 140, 138, 145, 150, 148, 149], 
+                    data: [100, 110, 125, 135, 140, 138, 145, 150, 148, 149, 155, 170], 
                     borderColor: '#ff6363', 
                     backgroundColor: 'rgba(255, 99, 99, 0.1)', 
                     tension: 0.4, 
@@ -93,7 +109,7 @@ if (lineCtx) {
                 },
                 {
                     label: 'Saúde', 
-                    data: [50, 55, 60, 58, 62, 65, 63, 66, 68, 68], 
+                    data: [50, 55, 60, 58, 62, 65, 63, 66, 68, 68, 70, 65], 
                     borderColor: '#36a2eb', 
                     backgroundColor: 'rgba(54, 162, 235, 0.1)', 
                     tension: 0.4, 
@@ -101,7 +117,7 @@ if (lineCtx) {
                 },
                 {
                     label: 'Comida', 
-                    data: [40, 45, 48, 50, 52, 55, 54, 56, 57, 58], 
+                    data: [40, 45, 48, 50, 52, 55, 54, 56, 57, 58, 55, 60], 
                     borderColor: '#8bc34a', 
                     backgroundColor: 'rgba(139, 195, 74, 0.1)', 
                     tension: 0.4, 
