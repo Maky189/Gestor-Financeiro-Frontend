@@ -38,14 +38,25 @@ if (barCtx) {
                 data: [310, 355, 393, 398, 425, 423, 442, 447, 441, 446, 415, 485], 
                 backgroundColor: '#ff8c42',
                 borderColor: '#e67a2e', 
-                borderWidth: 2 
+                borderWidth: 2
             }]
         },
         
         options: {
             responsive: true, 
-            maintainAspectRatio: true, 
+            maintainAspectRatio: true,
             scales: {
+                x: {
+                    ticks: {
+                        maxRotation: 0,
+                        minRotation: 0,
+                        autoSkip: false,
+                        padding: 6
+                    },
+                    grid: {
+                        display: false
+                    }
+                },
                 y: {
                     beginAtZero: true, 
                     ticks: {
@@ -53,6 +64,11 @@ if (barCtx) {
                             return value + ' esc'; 
                         }
                     }
+                }
+            },
+            layout: {
+                padding: {
+                    bottom: 12
                 }
             },
             plugins: {
