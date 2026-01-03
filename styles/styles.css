@@ -281,6 +281,10 @@ main {
     outline: none;
 }
 
+/* form feedback */
+.error-msg { display: none; color: #b23; margin-top: 8px; }
+.success-msg { display: none; color: #2a9d2a; margin-top: 8px; }
+
 /* bruno: Botão primário com a cor laranja do Gestor */
 .btn-primary-custom {
     background: var(--primary);

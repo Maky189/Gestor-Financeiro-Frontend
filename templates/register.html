@@ -32,35 +32,42 @@
                 <div class="mb-3">
                     <div class="input-with-icon">
                         <span class="input-icon">👤</span>
-                        <input type="text" class="form-control" placeholder="Nome" required>
+                        <input id="nomeInput" type="text" class="form-control" placeholder="Nome" required>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <div class="input-with-icon">
                         <span class="input-icon">✨</span>
-                        <input type="text" class="form-control" placeholder="Apelido" required>
+                        <input id="apelidoInput" type="text" class="form-control" placeholder="Apelido" required>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <div class="input-with-icon">
-                        <span class="input-icon">📧</span>
-                        <input type="email" class="form-control" placeholder="Email" required>
+                        <span class="input-icon">�</span>
+                        <input id="usernameInput" type="text" class="form-control" placeholder="Username (usuário)" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="input-with-icon">
+                        <span class="input-icon">�📧</span>
+                        <input id="emailInput" type="email" class="form-control" placeholder="Email" required>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <div class="input-with-icon">
                         <span class="input-icon">📱</span>
-                        <input type="tel" class="form-control" placeholder="Telefone" required>
+                        <input id="telefoneInput" type="tel" class="form-control" placeholder="Telefone" required>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <div class="input-with-icon">
                         <span class="input-icon">🏠</span>
-                        <input type="text" class="form-control" placeholder="Endereço" required>
+                        <input id="moradaInput" type="text" class="form-control" placeholder="Endereço" required>
                     </div>
                 </div>
 
@@ -82,6 +89,9 @@
                 <p id="sucessoCadastro" class="success-msg">✔️ Conta criada com sucesso!</p>
 
                 <button type="submit" class="btn btn-primary-custom w-100">Cadastrar</button>
+<!-- include auth scripts -->
+<script src="../scripts/api-config.js"></script>
+<script src="../scripts/auth.js"></script>
 
                 <div class="divider-text">
                     <span>ou</span>

@@ -183,99 +183,15 @@ cursor: pointer;
 </main>
 
 <!-- ======================= SCRIPT ======================= -->
-<script>
-    const categoriaInfo = {
-        "Alimentação": `
-            <h2>Alimentação</h2>
-            <table class="categoria-tabela">
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Descrição</th>
-                        <th>Valor Gasto</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        `,
-        "Entretenimento": `
-            <h2>Entretenimento</h2>
-            <table class="categoria-tabela">
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Descrição</th>
-                        <th>Valor Gasto</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        `,
-        "Saúde": `
-            <h2>Saúde</h2>
-            <table class="categoria-tabela">
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Descrição</th>
-                        <th>Valor Gasto</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        `,
-        "Transporte": `
-            <h2>Transporte</h2>
-            <table class="categoria-tabela">
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Descrição</th>
-                        <th>Valor Gasto</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        `,
-        "Lazer": `
-            <h2>Lazer</h2>
-            <table class="categoria-tabela">
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Descrição</th>
-                        <th>Valor Gasto</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        `,
-        "Gestão Pessoal": `
-            <h2>Gestão Pessoal</h2>
-            <table class="categoria-tabela">
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Descrição</th>
-                        <th>Valor Gasto</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        `
-    };
+<script src="../scripts/api-config.js"></script>
+<script src="../scripts/categories.js"></script>
 
+<script>
+    // keep demo behaviour: when clicking a category created dynamically, show placeholder content
     document.querySelectorAll(".categoria-item").forEach(item => {
         item.addEventListener("click", () => {
             const nome = item.textContent.trim();
-            if (!categoriaInfo[nome]) {
-                document.querySelector(".categoria-display").innerHTML = `
-                    <h2>Adicionar nova categoria</h2>
-                    <p>Funcionalidade ainda por implementar.</p>
-                `;
-                return;
-            }
-            document.querySelector(".categoria-display").innerHTML = categoriaInfo[nome];
+            document.querySelector(".categoria-display").innerHTML = `\n                <h2>${nome}</h2>\n                <p>Registos desta categoria serão mostrados aqui.</p>`;
         });
     });
 </script>

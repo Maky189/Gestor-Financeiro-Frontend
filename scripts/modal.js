@@ -1,4 +1,3 @@
-// Script para controlar a abertura e fechamento do modal
 const addExpenseBtn = document.getElementById('addExpenseBtn'); 
 const modalOverlay = document.getElementById('modalOverlay'); 
 const cancelBtn = document.getElementById('cancelBtn'); 
@@ -43,9 +42,9 @@ document.addEventListener('click', (e) => {
   }
 });
 
-saveBtn.addEventListener('click', () => {
-  const gasto = gastoInput.value;
-  const categoria = categoryBtn.textContent;
+saveBtn.addEventListener('click', async () => {
+  const gasto = gastoInput.value.trim();
+  const categoria = categoryBtn.textContent.trim();
   const valor = valorInput.value;
   
   if (!gasto || categoria === 'Selecionar categoria' || !valor) {
@@ -53,14 +52,36 @@ saveBtn.addEventListener('click', () => {
     return;
   }
 
-  console.log('Gasto:', gasto);
-  console.log('Categoria:', categoria);
-  console.log('Valor:', valor);
+  // send to backend
+  try {
+    const payload = {
+      descricao: gasto,
+      categoria: categoria,
+      valor: parseFloat(valor)
+    };
 
-  modalOverlay.classList.remove('active');
-  limparFormulario();
-  
-  alert('Despesa salva com sucesso!');
+    const res = await fetch(apiUrl('/api/spendings'), {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      alert(err.error || 'Erro ao salvar despesa');
+      return;
+    }
+
+    modalOverlay.classList.remove('active');
+    limparFormulario();
+    alert('Despesa salva com sucesso!');
+
+    // optionally refresh historico page if open
+  } catch (err) {
+    console.error(err);
+    alert('Erro ao conectar com o servidor');
+  }
 });
 
 function limparFormulario() {
