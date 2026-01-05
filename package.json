@@ -1,0 +1,16 @@
+{
+  "name": "gestor-financeiro-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Gestor Financeiro - static templates served locally",
+  "main": "frontend-server/server.js",
+  "scripts": {
+    "start": "node frontend-server/server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.7",
+    "http-proxy-middleware": "^2.0.6"
+  }
+}

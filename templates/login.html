@@ -34,18 +34,22 @@
                 <div class="mb-3">
                     <div class="input-with-icon">
                         <span class="input-icon">👤</span>
-                        <input type="text" class="form-control" placeholder="Email ou Username" required>
+                        <input id="usernameInput" type="text" class="form-control" placeholder="Email ou Username" required>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <div class="input-with-icon">
                         <span class="input-icon">🔒</span>
-                        <input type="password" class="form-control" placeholder="Senha" required>
+                        <input id="passwordInput" type="password" class="form-control" placeholder="Senha" required>
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary-custom w-100">Entrar</button>
+                <button id="loginBtn" type="submit" class="btn btn-primary-custom w-100">Entrar</button>
+
+                <!-- include auth scripts -->
+                <script src="../scripts/api-config.js"></script>
+                <script src="../scripts/auth.js"></script>
 
                 <div class="text-center mt-3">
                     <a href="#" class="link-custom">Esqueci a senha</a>

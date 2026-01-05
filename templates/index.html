@@ -43,16 +43,15 @@
 
 <main>
   <section class="summary-card">
-    <h2>Outubro 2025</h2>
-    
+    <h2 id="monthYear">--</h2>
+
     <div class="summary-item">
       <span>Despesa Total </span>
-      <strong> 5000esc</strong>
-    
+      <strong id="despesaTotal">0 esc</strong>
     </div>
     <div class="summary-item">
       <span>Orçamento restante </span>
-      <strong>3000esc / 7000esc</strong>
+      <strong id="orcamentoRestante">0 esc</strong>
     </div>
   </section>
 
@@ -92,8 +91,13 @@
     <h3>Nova Despesa</h3>
 
     <div class="form-group">
-      <label>Gasto:</label>
-      <input type="text" id="gastoInput" placeholder="Descreve o gasto">
+      <label>Título:</label>
+      <input type="text" id="gastoInput" placeholder="Título do gasto">
+    </div>
+
+    <div class="form-group">
+      <label>Descrição:</label>
+      <textarea id="descricaoInput" placeholder="Detalhes sobre o gasto" rows="3"></textarea>
     </div>
 
     <div class="form-group">
@@ -101,12 +105,12 @@
       <div class="dropdown">
         <button class="dropdown-btn" id="categoryBtn">Selecionar categoria</button>
         <div class="dropdown-content" id="dropdownContent">
-          <a href="#" data-value="alimentacao">Alimentação</a>
-          <a href="#" data-value="transporte">Transporte</a>
-          <a href="#" data-value="saude">Saúde</a>
-          <a href="#" data-value="lazer">Lazer</a>
-          <a href="#" data-value="educacao">Educação</a>
-          <a href="#" data-value="outros">Outros</a>
+          <a href="#" data-value="Alimentação">Alimentação</a>
+          <a href="#" data-value="Transporte">Transporte</a>
+          <a href="#" data-value="Saúde">Saúde</a>
+          <a href="#" data-value="Lazer">Lazer</a>
+          <a href="#" data-value="Educação">Educação</a>
+          <a href="#" data-value="Outros">Outros</a>
         </div>
       </div>
     </div>
@@ -125,7 +129,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="../scripts/graficos.js"></script>
-<!--script para controlar o modal-->
+<script src="../scripts/api-config.js"></script>
+<script src="../scripts/dashboard.js"></script>
 <script src="../scripts/modal.js"></script>
 </body>
 </html>
