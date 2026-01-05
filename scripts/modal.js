@@ -77,7 +77,8 @@ saveBtn.addEventListener('click', async () => {
     limparFormulario();
     alert('Despesa salva com sucesso!');
 
-    // optionally refresh historico page if open
+    window.dispatchEvent(new Event('spending:created'));
+
   } catch (err) {
     console.error(err);
     alert('Erro ao conectar com o servidor');
