@@ -1,13 +1,13 @@
-(async function(){
+async function loadCategories(){
   try {
     const res = await fetch(apiUrl('/api/categories'), { credentials: 'include' });
     if (!res.ok) {
       console.warn('Não foi possível obter categorias (não autenticado ou erro).');
-      return;
+      return [];
     }
     const categories = await res.json();
     const list = document.querySelector('.lista-categorias');
-    if (!list) return;
+    if (!list) return categories;
 
     list.innerHTML = '';
     categories.forEach(cat => {
@@ -20,7 +20,16 @@
       list.appendChild(el);
     });
 
+    return categories;
   } catch (err) {
     console.error(err);
+    return [];
   }
-})();
+}
+
+// initial load
+loadCategories();
+
+// refresh on category or spending events
+window.addEventListener('category:created', () => loadCategories());
+window.addEventListener('spending:created', () => loadCategories());
