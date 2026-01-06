@@ -300,3 +300,95 @@ main {
             justify-content: center;
             align-items: center;
         }
+
+/* ============================= */
+/* TABELA - HISTÓRICO (DESTACADA E CONFORTÁVEL) */
+/* ============================= */
+
+.historico-tabela {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 16px;
+    font-size: 16px;
+    background-color: #ffffff;
+
+    /* Contorno mais presente */
+    border: 2px solid #f2b36d;
+    border-radius: 16px;
+    overflow: hidden;
+
+    /* Leve elevação */
+    box-shadow: 0 6px 16px rgba(242, 179, 109, 0.25);
+}
+
+/* Cabeçalho */
+.historico-tabela thead th {
+    background: linear-gradient(
+        180deg,
+        #fff1df,
+        #ffe1c2
+    );
+    color: #2d2d2d;
+    padding: 12px 10px;
+    text-align: center;
+    font-weight: 700;
+
+    border-bottom: 2px solid #f2b36d;
+    border-right: 1px solid #f2b36d;
+}
+
+/* Remove borda da última coluna */
+.historico-tabela thead th:last-child {
+    border-right: none;
+}
+
+/* Corpo */
+.historico-tabela tbody td {
+    padding: 11px 10px;
+    text-align: center;
+    color: #3a3a3a;
+
+    border-bottom: 1px solid #f6d2a8;
+    border-right: 1px solid #f6d2a8;
+}
+
+/* Remove borda direita */
+.historico-tabela tbody td:last-child {
+    border-right: none;
+}
+
+/* Última linha */
+.historico-tabela tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Zebra visível mas suave */
+.historico-tabela tbody tr:nth-child(even) {
+    background-color: #fff7ec;
+}
+
+/* Hover perceptível */
+.historico-tabela tbody tr:hover {
+    background-color: #ffefd9;
+    transition: background-color 0.2s ease;
+}
+
+/* Altura confortável */
+.historico-tabela tbody tr {
+    height: 44px;
+}
+
+/* Valor com mais destaque */
+.historico-tabela td:last-child {
+    font-weight: 600;
+    color: #d97904;
+}
+
+/* Título */
+section h2 {
+    margin-bottom: 14px;
+    font-size: 23px;
+    font-weight: 700;
+    color: #1f1f1f;
+}
