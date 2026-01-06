@@ -155,35 +155,6 @@ main {
 }
 
 
-/* ============================================ */
-/* NAVEGAÇÃO BOTTOM COMENTADA (não é mais necessária) */
-/* ============================================ */
-/*
-.bottom-nav {
-  position: fixed;                
-  bottom: 0; left: 0;                   
-  width: 100%;                        
-  background: var(--white);        
-  display: flex;                 
-  justify-content: space-around;       
-  padding: 10px 0;                       
-  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-}
-
-.bottom-nav a {
-  text-decoration: none;        
-  color: var(--text-light);       
-  font-size: 14px;                  
-}
-
-.bottom-nav .active {
-  color: var(--primary);      
-  font-weight: bold;              
-}
-*/
-/* ============================================ */
-
-
 .chart-container {
   width: 400px;        
   height: 400px;     
@@ -191,7 +162,7 @@ main {
 }
 
 .chart-container-large {
-  width: 600px;
+  width: 820px;
   height: 500px;
   margin: 0 auto;
 }
@@ -391,4 +362,528 @@ section h2 {
     font-size: 23px;
     font-weight: 700;
     color: #1f1f1f;
+}
+/* ============================================ */
+/* bruno: ESTILOS DE LOGIN E REGISTO ATUALIZADOS */
+/* ============================================ */
+
+/* bruno: Fundo da página de login e registo */
+.login {
+    background-color: var(--bg) !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* bruno: Ajuste no container principal para centralizar */
+.main-login, .register-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* bruno: Box de Login e Registo (Seguindo o padrão do modal-box) */
+.login-box, .register-box {
+    background: var(--white);
+    width: 100%;
+    max-width: 400px; /* bruno: largura ajustada */
+    padding: 40px 30px;
+    border-radius: 15px; /* bruno: padrão do dashboard */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1); /* bruno: sombra suave */
+    border: none !important; /* bruno: removida borda cinza antiga */
+}
+
+/* bruno: Títulos dentro das boxes */
+.login-box h2, .register-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+/* bruno: Estilização dos inputs para combinar com o modal */
+.input-with-icon {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+}
+
+.input-with-icon .form-control {
+    padding-left: 40px; /* bruno: espaço para o ícone */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    height: 48px;
+    transition: border-color 0.3s;
+}
+
+.input-with-icon .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: none;
+    outline: none;
+}
+
+/* form feedback */
+.error-msg { display: none; color: #b23; margin-top: 8px; }
+.success-msg { display: none; color: #2a9d2a; margin-top: 8px; }
+
+/* bruno: Botão primário com a cor laranja do Gestor */
+.btn-primary-custom {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-primary-custom:hover {
+    background: #e68210;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(247, 147, 26, 0.3);
+}
+
+/* bruno: Links e textos de ajuda */
+.link-custom {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.link-custom-bold {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link-custom-bold:hover {
+    text-decoration: underline;
+}
+
+/* bruno: Separador "ou" */
+.divider-text {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.divider-text::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    left: 0;
+    top: 50%;
+    z-index: 1;
+}
+
+.divider-text span {
+    background: var(--white);
+    padding: 0 10px;
+    position: relative;
+    z-index: 2;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+/* bruno: Cabeçalho com o nome do sistema */
+.login-header, .register-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h1, .register-header h1 {
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-subtitle, .register-subtitle {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+/*Botão flutuante*/
+.floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.floating-btn:hover {
+  background: #e68210;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  transition: backdrop-filter 0.3s aese;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+/*Janela Modal Principal*/
+.modal-box {
+  background: var(--white);
+  width: 90%;
+  max-width: 450px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.modal-box h3 {
+  margin-bottom: 25px;
+  color: var(--text-dark);
+  font-size: 24px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Dropdown customizado*/
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--white);
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.dropdown-btn:hover {
+  border-color: var(--primary);
+}
+
+.dropdown-btn::after {
+  content: '▼';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: var(--white);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  margin-top: 5px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 3000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.dropdown-content.active {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  color: var(--text-dark);
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background: rgba(247, 147, 26, 0.1);
+}
+
+/*Botões da Modal */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn-save,
+.btn-cancel {
+  flex: 1;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-save {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-save:hover {
+  background: #e68210;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(247, 147, 26, 0.3);
+}
+
+.btn-cancel {
+  background: #ddd;
+  color: var(--text-dark);
+}
+
+.btn-cancel:hover {
+  background: #ccc;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .modal-box {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* ============================================ */
+/* NOVA SEÇÃO: PÁGINA DE PERFIL */
+
+.profile-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 25px;
+}
+
+/* Estilo para a imagem de perfil */
+.user-profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: 4px solid var(--white);
+}
+
+.user-profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* Estilo para os dados do perfil */
+.user-profile-data {
+    text-align: center;
+}
+
+.user-profile-name {
+    font-size: 24px;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.user-profile-data a {
+    font-size: 16px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.user-profile-data a:hover {
+    color: var(--text-dark);
+}
+
+/* Estilo para os botões de ação (Suporte e Logout) */
+.help-center,
+.user-logout {
+    width: 100%;
+    max-width: 400px;
+}
+
+.user-profile-contact p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    gap: 10px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: bold;
+
+}
+
+.help-center a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: bold;
+}
+
+.help-center-icon {
+    font-size: 25px;
+    margin-right: 15px;
+}
+
+.logout-icon {
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.top-nav .nav-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+.top-nav .nav-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* ============================================ */
+/* NOVA SEÇÃO: PÁGINA DE configurações */
+.goback {
+    width: 100%;
+    max-width: 50px;
+}
+.goback a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    padding: 12px 30px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: bold;
+}
+.options-main{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 25px;
+}
+.user-change, .user-delete, .user-logout, .policie{
+    width: 100%;
+    max-width: 700px;
+}
+.user-change a, .user-delete a, .user-logout a, .policie a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: bold;
+    font-size: 20px;
+}
+.user-logout a, .user-logout.logout-icon, .user-delete a {
+    color: #f12d16;
 }

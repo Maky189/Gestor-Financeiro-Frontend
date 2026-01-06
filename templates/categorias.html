@@ -18,10 +18,9 @@ border-radius: 25px;
 box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
 }
 
-
 /* ======= ÁREA DE CATEGORIAS ======= */ 
 .categoria-container { 
-    padding: 30px; 
+padding: 30px; 
 }
 
 .categoria-area {
@@ -29,14 +28,12 @@ display: flex;
 gap: 40px;
 }
 
-
 .lista-categorias {
 display: flex;
 flex-direction: column;
 gap: 20px;
 min-width: 230px;
 }
-
 
 .categoria-item {
 display: flex;
@@ -49,12 +46,10 @@ border-radius: 12px;
 transition: 0.25s ease;
 }
 
-
 /* Hover igual ao efeito laranja claro do menu */
 .categoria-item:hover {
 background: #ffe8c2;
 }
-
 
 .icon {
 width: 32px;
@@ -67,16 +62,15 @@ color: #fff;
 font-size: 14px;
 }
 
-
 .yellow { background: #ffbe0b; }
 .purple { background: #8338ec; }
 .green { background: #2ec4b6; }
 .blue { background: #3a86ff; }
+.black { background: #000; }
+.red { background: #ff2c2f; }
 .gray { background: #8d99ae; }
 
-
 .add { opacity: 0.8; }
-
 
 /* ======= DISPLAY ======= */
 .categoria-display {
@@ -85,17 +79,62 @@ height: 450px;
 border: 3px solid #ffeeb5;
 border-radius: 60px;
 background: #fff;
+padding: 40px 60px; /* espaço interno */
+display: block; /* conteúdo no topo */
+}
+
+/* ======= TABELA ======= */
+.categoria-tabela {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+font-size: 17px;
+}
+
+.categoria-tabela th {
+background: #ffeeb5;
+padding: 12px;
+text-align: left;
+font-weight: bold;
+border: 1px solid #e5cf8f; /* bordas do header */
+}
+
+.categoria-tabela td {
+padding: 10px;
+border: 1px solid #ddd; /* bordas entre colunas e linhas */
+}
+
+.categoria-tabela tr:hover {
+background: #fff7e0;
+}
+
+.categoria-display h2 {
+margin-bottom: 15px;
+}
+
+.categoria-display p,
+.categoria-display ul {
+font-size: 17px;
+line-height: 1.6;
+}
+
+/* ======= PROFILE ICON ======= */
+.profile-icon {
+position: absolute;
+top: 20px;
+right: 50px;
+font-size: 24px;
+cursor: pointer;
 }
 </style>
-
 </head>
 <body>
 
 <!-- ============================================ -->
-<!-- NAVEGAÇÃO MOVIDA PARA CIMA (LOGO APÓS HEADER) -->
+<!-- NAVEGAÇÃO -->
 <!-- ============================================ -->
 <nav class="top-nav">
-  <a href="index.html" class="nav-item active">
+  <a href="index.html" class="nav-item">
     <span class="nav-icon">📊</span>
     <span class="nav-label">Dashboard</span>
   </a>
@@ -103,7 +142,7 @@ background: #fff;
     <span class="nav-icon">💸</span>
     <span class="nav-label">Despesas</span>
   </a>
-  <a href="categorias.html" class="nav-item">
+  <a href="categorias.html" class="nav-item active">
     <span class="nav-icon">📁</span>
     <span class="nav-label">Categorias</span>
   </a>
@@ -116,32 +155,46 @@ background: #fff;
     <span class="nav-label">Configurações</span>
   </a>
 </nav>
-<!-- ============================================ -->
 
-    <!-- CONTEÚDO -->
-    <main class="categoria-container">
-        <br>
-        <h1>Categorias</h1>
-        <br><br>
+<!-- CONTEÚDO -->
+<main class="categoria-container">
+    <br>
+    <h1>Categorias</h1>
+    <br><br>
 
-        <section class="categoria-area">
-            <div class="lista-categorias">
-                <div class="categoria-item"><span class="icon yellow"><i class="fa-solid fa-utensils"></i></span> Alimentação</div>
-                <div class="categoria-item"><span class="icon purple"><i class="fa-solid fa-star"></i></span> Entretenimento</div>
-                <div class="categoria-item"><span class="icon green"><i class="fa-solid fa-heartbeat"></i></span> Saúde</div>
-                <div class="categoria-item"><span class="icon blue"><i class="fa-solid fa-user-gear"></i></span> Gestão Pessoal</div>
-                <div class="categoria-item add"><span class="icon gray"><i class="fa-solid fa-plus"></i></span> Adicionar mais...</div>
-            </div>
+    <section class="categoria-area">
+        <div class="lista-categorias">
+            <div class="categoria-item"><span class="icon yellow"><i class="fa-solid fa-utensils"></i></span> Alimentação</div>
+            <div class="categoria-item"><span class="icon purple"><i class="fa-solid fa-star"></i></span> Entretenimento</div>
+            <div class="categoria-item"><span class="icon green"><i class="fa-solid fa-heartbeat"></i></span> Saúde</div>
+            <div class="categoria-item"><span class="icon black"><i class="fa-solid fa-car"></i></span> Transporte</div>
+            <div class="categoria-item"><span class="icon red"><i class="fa-solid fa-futbol"></i></span> Lazer</div>
+            <div class="categoria-item"><span class="icon blue"><i class="fa-solid fa-user-gear"></i></span> Gestão Pessoal</div>
+            <div class="categoria-item add"><span class="icon gray"><i class="fa-solid fa-plus"></i></span> Adicionar mais...</div>
+        </div>
 
-            <div class="categoria-display"></div>
+        <div class="categoria-display"></div>
 
-            <div class="profile-icon">
+        <div class="profile-icon">
             <i class="fa-solid fa-user"></i>
-            </div>
+        </div>
 
-        </section>
-    </main>
+    </section>
+</main>
 
-<script src="categorias.js"></script>
+<!-- ======================= SCRIPT ======================= -->
+<script src="../scripts/api-config.js"></script>
+<script src="../scripts/categories.js"></script>
+
+<script>
+    // keep demo behaviour: when clicking a category created dynamically, show placeholder content
+    document.querySelectorAll(".categoria-item").forEach(item => {
+        item.addEventListener("click", () => {
+            const nome = item.textContent.trim();
+            document.querySelector(".categoria-display").innerHTML = `\n                <h2>${nome}</h2>\n                <p>Registos desta categoria serão mostrados aqui.</p>`;
+        });
+    });
+</script>
+
 </body>
 </html>

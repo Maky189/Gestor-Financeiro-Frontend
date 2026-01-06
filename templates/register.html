@@ -14,70 +14,91 @@
 
 </head>
 
-<body class="login">
 
-    <!-- NAVBAR -->
-    <header class="top-bar">
-            <h1>Gestor Financeiro</h1>
-        </header>
+  
 
-        <!-- ============================================ -->
-        <!-- NAVEGAÇÃO MOVIDA PARA CIMA (LOGO APÓS HEADER) -->
-        <!-- ============================================ -->
-        <nav class="top-nav">
-        <a href="index.html" class="nav-item active">
-            <span class="nav-icon">📊</span>
-            <span class="nav-label">Dashboard</span>
-        </a>
-        <a href="despesas.html" class="nav-item">
-            <span class="nav-icon">💸</span>
-            <span class="nav-label">Despesas</span>
-        </a>
-        <a href="categorias.html" class="nav-item">
-            <span class="nav-icon">📁</span>
-            <span class="nav-label">Categorias</span>
-        </a>
-        <a href="historico.html" class="nav-item">
-            <span class="nav-icon">📋</span>
-            <span class="nav-label">Histórico</span>
-        </a>
-        <a href="config.html" class="nav-item">
-            <span class="nav-icon">⚙️</span>
-            <span class="nav-label">Configurações</span>
-        </a>
-        </nav>
-
-    <!-- FORMULÁRIO -->
+    
     <main class="register-main">
         <div class="register-box">
+            <div class="register-header">
+                <h1>Gestor Financeiro</h1>
+                <p class="register-subtitle">Comece a gerenciar suas finanças!</p>
+            </div>
+
             <h2>Criar Conta</h2>
 
             <form id="registerForm" action="#" method="POST">
 
                 <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Nome completo" required>
+                    <div class="input-with-icon">
+                        <span class="input-icon">👤</span>
+                        <input id="nomeInput" type="text" class="form-control" placeholder="Nome" required>
+                    </div>
                 </div>
 
                 <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Email" required>
+                    <div class="input-with-icon">
+                        <span class="input-icon">✨</span>
+                        <input id="apelidoInput" type="text" class="form-control" placeholder="Apelido" required>
+                    </div>
                 </div>
 
                 <div class="mb-3">
-                    <input type="password" id="senha" class="form-control" placeholder="Senha" required>
+                    <div class="input-with-icon">
+                        <span class="input-icon">�</span>
+                        <input id="usernameInput" type="text" class="form-control" placeholder="Username (usuário)" required>
+                    </div>
                 </div>
 
                 <div class="mb-3">
-                    <input type="password" id="confirmarSenha" class="form-control" placeholder="Confirmar senha" required>
+                    <div class="input-with-icon">
+                        <span class="input-icon">�📧</span>
+                        <input id="emailInput" type="email" class="form-control" placeholder="Email" required>
+                    </div>
                 </div>
 
-                <!-- Mensagens -->
+                <div class="mb-3">
+                    <div class="input-with-icon">
+                        <span class="input-icon">📱</span>
+                        <input id="telefoneInput" type="tel" class="form-control" placeholder="Telefone" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="input-with-icon">
+                        <span class="input-icon">🏠</span>
+                        <input id="moradaInput" type="text" class="form-control" placeholder="Endereço" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="input-with-icon">
+                        <span class="input-icon">🔒</span>
+                        <input type="password" id="senha" class="form-control" placeholder="Senha" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="input-with-icon">
+                        <span class="input-icon">✓</span>
+                        <input type="password" id="confirmarSenha" class="form-control" placeholder="Confirmar senha" required>
+                    </div>
+                </div>
+
                 <p id="erroSenhas" class="error-msg">⚠️ As senhas não coincidem.</p>
                 <p id="sucessoCadastro" class="success-msg">✔️ Conta criada com sucesso!</p>
 
-                <button type="submit" class="btn btn-dark w-100">Cadastrar</button>
+                <button type="submit" class="btn btn-primary-custom w-100">Cadastrar</button>
+<!-- include auth scripts -->
+<script src="../scripts/api-config.js"></script>
+<script src="../scripts/auth.js"></script>
 
-                <div class="text-center mt-2">
-                    <a href="login.html">Já tenho conta</a>
+                <div class="divider-text">
+                    <span>ou</span>
+                </div>
+
+                <div class="text-center mt-3">
+                    <p class="signup-text">Já tem uma conta? <a href="login.html" class="link-custom-bold">Faça login</a></p>
                 </div>
 
             </form>
@@ -113,4 +134,3 @@
 
 </body>
 </html>
-
