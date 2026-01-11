@@ -892,7 +892,7 @@ section h2 {
 /* ========= ABA-DE-ENTRADA =========/*
 
 
-/* bruno: Importação das variáveis de cores do seu styles.css */
+/*  Importação das variáveis de cores do seu styles.css */
         :root {
             --primary: #f7931a;     
             --bg: #f4f4f4;          
@@ -908,23 +908,23 @@ section h2 {
             height: 100vh;
         }
 
-        /* bruno: Estilo da Modal Overlay com o desfoque (blur) original */
+        /*  Estilo da Modal Overlay com o desfoque (blur) original */
         .modal-overlay {
-            display: none; /* Inicialmente oculto, mas o JS ativará */
+            display: none; 
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(8px); /* bruno: Mantido o efeito do index.html */
+            backdrop-filter: blur(8px); 
             -webkit-backdrop-filter: blur(8px);
             z-index: 2000;
             align-items: center;
             justify-content: center;
         }
 
-        /* bruno: Classe ativa para mostrar a modal */
+        /* Classe ativa para mostrar a modal */
         .modal-overlay.active {
             display: flex; /* */
         }
@@ -958,7 +958,7 @@ section h2 {
             font-size: 16px;
         }
 
-        /* bruno: Estilo unificado para inputs de Título e Descrição */
+        /*  Estilo unificado para inputs de Título e Descrição */
         .form-group input {
             width: 100%;
             padding: 12px;

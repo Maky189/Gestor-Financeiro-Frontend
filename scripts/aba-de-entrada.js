@@ -3,7 +3,7 @@ const modalOverlay = document.getElementById('modalOverlay');
         const dropdownContent = document.getElementById('dropdownContent');
         const cancelBtn = document.getElementById('cancelBtn');
 
-        // bruno: Função para abrir a modal automaticamente ao carregar a página
+        //  Função para abrir a modal automaticamente ao carregar a página
         window.onload = function() {
             modalOverlay.classList.add('active'); //
         };
@@ -26,7 +26,7 @@ const modalOverlay = document.getElementById('modalOverlay');
             modalOverlay.classList.remove('active');
         });
 
-        // bruno: Fechar se clicar fora da modal (mantendo funcionalidade do modal.js)
+        // Fechar se clicar fora da modal (mantendo funcionalidade do modal.js)
         modalOverlay.addEventListener('click', (e) => {
             if (e.target === modalOverlay) {
                 modalOverlay.classList.remove('active'); //
