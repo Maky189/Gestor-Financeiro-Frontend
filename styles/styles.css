@@ -367,9 +367,9 @@ section h2 {
 /* bruno: ESTILOS DE LOGIN E REGISTO ATUALIZADOS */
 /* ============================================ */
 
-/* bruno: Fundo da página de login e registo */
 .login {
-    background-color: var(--bg) !important;
+    background: url("../templates/fundo-login.jpg") no-repeat center center;
+    background-size: cover; /* cobre toda a tela */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
