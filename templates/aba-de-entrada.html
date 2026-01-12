@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Despesas - Modal Automática</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+        
+</head>
+<body>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box">
+            <h3>Nova Despesa</h3>
+
+            <div class="form-group">
+                <label>Título:</label>
+                <input type="text" id="gastoInput" placeholder="Título do gasto">
+            </div>
+
+            <div class="form-group">
+                <label>Descrição:</label>
+                <input type="text" id="descricaoInput" placeholder="Detalhes sobre o gasto">
+            </div>
+
+            <div class="form-group">
+                <label>Categoria:</label>
+                <div class="dropdown">
+                    <button class="dropdown-btn" id="categoryBtn">Selecionar categoria</button>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a href="#" data-value="Alimentação">Alimentação</a>
+                        <a href="#" data-value="Saúde">Saúde</a>
+                        <a href="#" data-value="Lazer">Lazer</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Valor (CVE):</label>
+                <input type="number" id="valorInput" placeholder="0.00" step="0.01">
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-save" id="saveBtn">Salvar</button>
+                <button class="btn-cancel" id="cancelBtn">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/aba-de-entrada.js"></script>
+        
+</body>
+</html>

@@ -46,7 +46,7 @@ async function loadModalCategories(){
 
     // if none, use defaults
     if (!categories || categories.length === 0){
-      const defaults = ['Alimentação','Transporte','Saúde','Lazer','Educação','Outros'];
+      const defaults = ['Alimentação','Saúde','Lazer'];
       dropdownContent.innerHTML = defaults.map(d => `<a href="#" data-value="${d}">${d}</a>`).join('');
       return;
     }
@@ -54,7 +54,7 @@ async function loadModalCategories(){
     dropdownContent.innerHTML = categories.map(c => `<a href="#" data-value="${c.nome || c.name || c.title}">${c.nome || c.name || c.title}</a>`).join('');
   }catch(err){
     console.warn('Could not load categories', err);
-    const defaults = ['Alimentação','Transporte','Saúde','Lazer','Educação','Outros'];
+    const defaults = ['Alimentação','Saúde','Lazer'];
     dropdownContent.innerHTML = defaults.map(d => `<a href="#" data-value="${d}">${d}</a>`).join('');
   }
 }
