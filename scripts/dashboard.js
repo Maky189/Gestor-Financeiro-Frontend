@@ -34,7 +34,6 @@
 
       let despesaTotal = 0;
 
-      // seed category maps with all existing categories (so they appear even with 0)
       const categoryTotals = new Map();
       const categoryMonthly = new Map();
       categories.forEach((c) => {
@@ -44,7 +43,6 @@
           categoryMonthly.set(name, Array.from({length:12}, () => 0));
         }
       });
-      // ensure a default "Outros" category exists
       if (!categoryTotals.has('Outros')) {
         categoryTotals.set('Outros', 0);
         categoryMonthly.set('Outros', Array.from({length:12}, () => 0));
@@ -53,13 +51,11 @@
       const monthTotals = Array.from({length:12}, () => 0);
 
       function findCategoryNameForSpending(s){
-        // prefer direct category string fields
         let cname = '';
         if (s.categoria && String(s.categoria).trim() !== '') cname = String(s.categoria).trim();
         else if (s.category && typeof s.category === 'string' && s.category.trim() !== '') cname = s.category.trim();
         else if (s.category && typeof s.category === 'object' && (s.category.nome || s.category.name)) cname = (s.category.nome || s.category.name);
 
-        // if not found, try by id fields
         if (!cname) {
           const id = s.category_id || s.categoria_id || s.categoryId || s.category_id;
           if (id && categories.length) {
@@ -68,7 +64,6 @@
           }
         }
 
-        // try to match by name case-insensitive
         if (!cname && s.categoria && categories.length) {
           const found = categories.find(c => (c.nome || c.name || '').toLowerCase() === String(s.categoria).toLowerCase());
           if (found) cname = (found.nome || found.name);
