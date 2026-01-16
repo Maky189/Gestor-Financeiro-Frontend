@@ -36,26 +36,59 @@
 
       const categoryTotals = new Map();
       const categoryMonthly = new Map();
+      categories.forEach((c) => {
+        const name = (c.nome || c.name || c.title || '').toString();
+        if (name) {
+          categoryTotals.set(name, 0);
+          categoryMonthly.set(name, Array.from({length:12}, () => 0));
+        }
+      });
+      if (!categoryTotals.has('Outros')) {
+        categoryTotals.set('Outros', 0);
+        categoryMonthly.set('Outros', Array.from({length:12}, () => 0));
+      }
 
       const monthTotals = Array.from({length:12}, () => 0);
+
+      function findCategoryNameForSpending(s){
+        let cname = '';
+        if (s.categoria && String(s.categoria).trim() !== '') cname = String(s.categoria).trim();
+        else if (s.category && typeof s.category === 'string' && s.category.trim() !== '') cname = s.category.trim();
+        else if (s.category && typeof s.category === 'object' && (s.category.nome || s.category.name)) cname = (s.category.nome || s.category.name);
+
+        if (!cname) {
+          const id = s.category_id || s.categoria_id || s.categoryId || s.category_id;
+          if (id && categories.length) {
+            const c = categories.find(c => String(c.id) === String(id) || String(c.id) === String(s.categoria_id));
+            if (c) cname = (c.nome || c.name || c.title || '');
+          }
+        }
+
+        if (!cname && s.categoria && categories.length) {
+          const found = categories.find(c => (c.nome || c.name || '').toLowerCase() === String(s.categoria).toLowerCase());
+          if (found) cname = (found.nome || found.name);
+        }
+
+        if (!cname) cname = 'Outros';
+        return cname;
+      }
 
       spendings.forEach(s => {
         const amount = parseFloat(s.valor || s.preco || s.amount || s.value || s.price) || 0;
         const d = new Date(s.data || s.createdAt || s.date || s.created_at || Date.now());
         const m = (d.getMonth() + 12) % 12;
+
         monthTotals[m] += amount;
         despesaTotal += amount;
 
-        let cname = s.categoria || s.category || s.categoryName || '';
-        if (!cname && s.category_id && categories.length){
-          const c = categories.find(c => c.id === s.category_id || c.id === s.categoria_id);
-          cname = c ? (c.nome || c.name) : 'Outros';
+        const cname = findCategoryNameForSpending(s);
+
+        if (!categoryTotals.has(cname)) {
+          categoryTotals.set(cname, 0);
+          categoryMonthly.set(cname, Array.from({length:12}, () => 0));
         }
-        if (!cname) cname = 'Outros';
 
         categoryTotals.set(cname, (categoryTotals.get(cname) || 0) + amount);
-
-        if (!categoryMonthly.has(cname)) categoryMonthly.set(cname, Array.from({length:12}, () => 0));
         categoryMonthly.get(cname)[m] += amount;
       });
 
@@ -82,11 +115,21 @@
         const datasets = [];
         let i=0;
         for (const [name, months] of categoryMonthly.entries()){
-          datasets.push({
+          function hexToRgba(hex, alpha){
+          if (!hex) return `rgba(0,0,0,${alpha})`;
+          const h = hex.replace('#','');
+          if (h.length !== 6) return `rgba(0,0,0,${alpha})`;
+          const r = parseInt(h.slice(0,2),16);
+          const g = parseInt(h.slice(2,4),16);
+          const b = parseInt(h.slice(4,6),16);
+          return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        }
+
+        datasets.push({
             label: name,
             data: months.map(v => Math.round(v*100)/100),
             borderColor: colorForCategory(i),
-            backgroundColor: colorForCategory(i).replace('#','') ? `rgba(${parseInt(colorForCategory(i).slice(1,3),16)}, ${parseInt(colorForCategory(i).slice(3,5),16)}, ${parseInt(colorForCategory(i).slice(5,7),16)}, 0.1)` : 'rgba(0,0,0,0.1)',
+            backgroundColor: hexToRgba(colorForCategory(i), 0.1),
             tension: 0.4,
             fill: true
           });
