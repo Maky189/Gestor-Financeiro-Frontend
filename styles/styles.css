@@ -1,3 +1,4 @@
+
 :root {
   --primary: #f7931a;     
   --bg: #f4f4f4;          
@@ -218,6 +219,12 @@ main {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+
+            /* imagem de fundo */ 
+            background-image: url("../templates/imagem background.jpg");
+             background-size: cover; /* cobre toda a tela */ 
+             background-position: center; /* centraliza a imagem */ 
+             background-repeat: no-repeat; /* não repete */ 
         }
 
         .main-login {
@@ -230,9 +237,10 @@ main {
         .login-box {
             width: 320px;
             padding: 20px;
-            border: 1px solid #ddd; /* só para visualização */
+            border: 1px solid #ddd; 
             border-radius: 6px;
-        }
+
+          }
 
         .login-box h2 {
             text-align: center;
@@ -240,17 +248,31 @@ main {
             font-weight: normal;
         }
 
-        .register-box {
-            width: 360px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
+        body.register {
+            min-height: 100vh;
+            background-image: url("../templates/imagem background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        .register-box h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: normal;
+        
+        .register-main {
+            min-height: 100vh;           
+            display: flex !important;       
+            justify-content: center !important;
+            align-items: center !important;
+            padding: 20px;
+        }
+
+  /* caixa do formulário */
+        .register-box {
+            width: 100%;
+            max-width: 560px;
+            padding: 32px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
 
         .error-msg {
@@ -266,10 +288,7 @@ main {
         }
 
         .register-main {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+           width: 100%;
         }
 
 /* ============================= */
@@ -1044,4 +1063,38 @@ section h2 {
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
+        }
+        
+/*Atualizações feitas na tela Cadastro */
+
+        /* RESET TOTAL */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+
+        body.register {
+            position: relative;
+            background-image: url("../templates/imagem background.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+      
+        .register-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 100%;
+            max-width: 560px;
+            max-height: 90vh;          
+            overflow-y: auto;        
+
+            padding: 32px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
         }
