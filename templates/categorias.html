@@ -154,12 +154,6 @@ background: #fff7e0;
 
     <section class="categoria-area">
         <div class="lista-categorias">
-          <div class="categoria-item"><span class="icon yellow"><i class="fa-solid fa-utensils"></i></span> Alimentação</div>
-          <div class="categoria-item"><span class="icon purple"><i class="fa-solid fa-star"></i></span> Entretenimento</div>
-          <div class="categoria-item"><span class="icon green"><i class="fa-solid fa-heartbeat"></i></span> Saúde</div>
-          <div class="categoria-item"><span class="icon black"><i class="fa-solid fa-car"></i></span> Transporte</div>
-          <div class="categoria-item"><span class="icon red"><i class="fa-solid fa-futbol"></i></span> Lazer</div>
-          <div class="categoria-item"><span class="icon blue"><i class="fa-solid fa-user-gear"></i></span> Gestão Pessoal</div>
         </div>
 
         <div class="categoria-display"></div>
@@ -172,89 +166,8 @@ background: #fff7e0;
 </main>
 
 <!-- ======================= SCRIPT ======================= -->
-<script>
-    const categoriaInfo = {
-        "Alimentação": `
-            <h2>Alimentação</h2>
-            <table class="categoria-tabela">
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        `,
-        "Entretenimento": `
-            <h2>Entretenimento</h2>
-            <table class="categoria-tabela">
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        `,
-        "Saúde": `
-            <h2>Saúde</h2>
-            <table class="categoria-tabela">
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        `,
-        "Transporte": `
-            <h2>Transporte</h2>
-            <table class="categoria-tabela">
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        `,
-        "Lazer": `
-            <h2>Lazer</h2>
-            <table class="categoria-tabela">
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        `,
-        "Gestão Pessoal": `
-            <h2>Gestão Pessoal</h2>
-            <table class="categoria-tabela">
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        `
-    };
-
-    document.querySelectorAll(".categoria-item").forEach(item => {
-        item.addEventListener("click", () => {
-            const nome = item.textContent.trim();
-            document.querySelector(".categoria-display").innerHTML = categoriaInfo[nome];
-        });
-    });
-</script>
+<script src="../scripts/api-config.js"></script>
+<script src="../scripts/categories.js"></script>
 
 </body>
 </html>
