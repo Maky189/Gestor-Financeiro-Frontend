@@ -48,3 +48,5 @@ async function addBalance() {
 loadAccountInfo();
 
 document.getElementById('add-balance-btn').addEventListener('click', addBalance);
+
+
