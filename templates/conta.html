@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conta</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- NAVEGAÇÃO MOVIDA PARA CIMA (LOGO APÓS HEADER) -->
+<!-- ============================================ -->
+<nav class="top-nav">
+  <a href="index.html" class="nav-item">
+    <span class="nav-icon">📊</span>
+    <span class="nav-label">Dashboard</span>
+  </a>
+  <a href="conta.html" class="nav-item active">
+    <span class="nav-icon">💸</span>
+    <span class="nav-label">Conta</span>
+  </a>
+  <a href="categorias.html" class="nav-item">
+    <span class="nav-icon">📁</span>
+    <span class="nav-label">Categorias</span>
+  </a>
+  <a href="historico.html" class="nav-item">
+    <span class="nav-icon">📋</span>
+    <span class="nav-label">Histórico</span>
+  </a>
+  <a href="options.html" class="nav-item">
+    <span class="nav-icon">⚙️</span>
+    <span class="nav-label">Configurações</span>
+  </a>
+</nav>
+
+<main>
+  <section class="account-section">
+    <h2>Informações da Conta</h2>
+    <!-- ✅ ADICIONADO: Cabeçalho da Conta -->
+    <div class="account-header">
+      <div class="account-badge">
+        <span class="badge-dot"></span>
+        <span>Conta ativa</span>
+      </div>
+
+      <div class="account-actions">
+        <button type="button" class="mini-btn" id="copy-account">Copiar nº</button>
+        <button type="button" class="mini-btn" id="toggle-balance">Ocultar saldo</button>
+      </div>
+    </div>
+
+    <div class="account-info">
+      <!-- ✅ ADICIONADO: Cartão de saldo em destaque -->
+      <div class="balance-card">
+        <div class="balance-label">Saldo disponível</div>
+        <div class="balance-value">
+          <span id="balance-visual">--</span>
+          <span class="balance-currency">esc</span>
+        </div>
+        <div class="balance-hint">Última atualização: <span id="balance-updated">agora</span></div>
+      </div>
+
+      <p><strong>Número da Conta:</strong> <span id="account-number">--</span></p>
+      <p><strong>Saldo Atual:</strong> <span id="account-balance">--</span> esc</p>
+    </div>
+
+    <h3>Adicionar Saldo</h3>
+    <div class="add-balance">
+      <input type="number" id="add-amount" placeholder="Valor a adicionar" min="0" step="0.01">
+      <button id="add-balance-btn">Enviar</button>
+    </div>
+    <p id="add-message" style="color: green;"></p>
+  </section>
+</main>
+
+<!-- Scripts -->
+<script src="../scripts/api-config.js"></script>
+<script src="../scripts/conta.js"></script>
+
+</body>
+<script>
+  // Copiar número da conta
+  document.getElementById("copy-account")?.addEventListener("click", async () => {
+    const acc = document.getElementById("account-number")?.textContent?.trim();
+    if (!acc || acc === "--") return;
+
+    try {
+      await navigator.clipboard.writeText(acc);
+      const msg = document.getElementById("add-message");
+      msg.style.color = "green";
+      msg.textContent = "✅ Número da conta copiado!";
+      setTimeout(() => msg.textContent = "", 2500);
+    } catch {}
+  });
+
+  // Mostrar/ocultar saldo (visual)
+  let hidden = false;
+  document.getElementById("toggle-balance")?.addEventListener("click", () => {
+    hidden = !hidden;
+
+    const bal = document.getElementById("account-balance");
+    const visual = document.getElementById("balance-visual");
+    const btn = document.getElementById("toggle-balance");
+
+    if (!bal || !visual || !btn) return;
+
+    if (hidden) {
+      visual.textContent = "••••";
+      btn.textContent = "Mostrar saldo";
+    } else {
+      visual.textContent = bal.textContent || "--";
+      btn.textContent = "Ocultar saldo";
+    }
+  });
+
+  // Espelhar saldo 
+  const syncBalance = () => {
+    const bal = document.getElementById("account-balance");
+    const visual = document.getElementById("balance-visual");
+    const updated = document.getElementById("balance-updated");
+
+    if (!bal || !visual) return;
+    if (!hidden) visual.textContent = bal.textContent || "--";
+    if (updated) updated.textContent = "agora";
+  };
+
+  // Atualiza periodicamente 
+  setInterval(syncBalance, 700);
+  syncBalance();
+</script>
+
+</html>
