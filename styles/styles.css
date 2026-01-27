@@ -1,10 +1,10 @@
 
 :root {
   --primary: #f7931a;     
-  --bg: #f4f4f4;          
+  --bg: #f4f4f4;
   --white: #ffffff;     
   --text-dark: #333;     
-  --text-light: #666;     
+  --text-light: #666;
 }
 
 
@@ -914,10 +914,10 @@ section h2 {
 /*  Importação das variáveis de cores do seu styles.css */
         :root {
             --primary: #f7931a;     
-            --bg: #f4f4f4;          
+            --bg: #f4f4f4;
             --white: #ffffff;     
             --text-dark: #333;     
-            --text-light: #666;     
+            --text-light: #666;
         }
 
         body { 
@@ -1380,4 +1380,253 @@ background: #fff7e0;
 .amount-container:focus-within{
   border-color: #6c63ff;               /* cor quando está a escrever */
   box-shadow: 0 0 0 4px rgba(108,99,255,.18);
+}
+
+/* ============================================ */
+/* PÁGINA DE EDIÇÃO DE PERFIL */
+/* ============================================ */
+
+.profile-edit-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.edit-section {
+    width: 100%;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.edit-section h3 {
+    color: var(--text-dark);
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.user-profile-change-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.current-profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: 4px solid var(--primary);
+}
+
+.current-profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-change-image {
+    padding: 12px 30px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(247, 147, 26, 0.3);
+}
+
+.btn-change-image:hover {
+    background: #e68210;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(247, 147, 26, 0.4);
+}
+
+.edit-input-group {
+    margin-bottom: 15px;
+}
+
+.edit-input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: var(--bg);
+}
+
+.edit-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(247, 147, 26, 0.1);
+}
+
+.edit-input::placeholder {
+    color: var(--text-light);
+}
+
+.btn-edit-save {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-edit-save:hover {
+    background: #e68210;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(247, 147, 26, 0.3);
+}
+
+.danger-zone {
+    border: 2px solid #ff4444;
+    background: #fff5f5;
+}
+
+.danger-zone h3 {
+    color: #cc0000;
+}
+
+.danger-text {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.btn-deactivate {
+    width: 100%;
+    padding: 14px;
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-deactivate:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 68, 68, 0.4);
+}
+
+/* ============================================ */
+/* PÁGINA DE CONFIRMAÇÃO DE DESATIVAÇÃO */
+/* ============================================ */
+
+.confirm-deactivate-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: var(--bg);
+}
+
+.confirm-box {
+    background: var(--white);
+    width: 100%;
+    max-width: 500px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    text-align: center;
+    border: 3px solid #ff4444;
+}
+
+.warning-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.confirm-box h2 {
+    color: var(--text-dark);
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.confirm-message {
+    color: var(--text-light);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.confirm-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-confirm-no,
+.btn-confirm-yes {
+    flex: 1;
+    max-width: 180px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-confirm-no {
+    background: #4CAF50;
+    color: white;
+}
+
+
+.btn-confirm-yes {
+    background: #ff4444;
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+    .profile-edit-main {
+        padding: 20px 15px;
+    }
+
+    .edit-section {
+        padding: 20px;
+    }
+
+    .confirm-box {
+        padding: 30px 20px;
+    }
+
+    .confirm-actions {
+        flex-direction: column;
+    }
+
+    .btn-confirm-no,
+    .btn-confirm-yes {
+        max-width: 100%;
+    }
 }
