@@ -79,7 +79,11 @@ if (loginForm && document.getElementById('loginBtn')) {
     const { ok, data } = await postJSON(apiUrl('/api/users/login'), payload);
 
     if (ok) {
-      window.location.href = 'index.html';
+      if (data && (data.username === 'admin' || data.name === 'admin')) {
+        window.location.href = 'admin.html';
+      } else {
+        window.location.href = 'index.html';
+      }
     } else {
       const err = data && data.error ? data.error : 'Login failed';
       alert(err);

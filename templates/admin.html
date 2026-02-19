@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Gerenciamento de Usuários</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+        <main>
+            <section class="list-card" style="margin:20px;">
+                <h2>Gerenciamento de Usuários</h2>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                    <div style="color:var(--text-light);">Lista de todos os utilizadores registados</div>
+                    <div>
+                        <button class="nav-item" onclick="fetchUsers()">Atualizar</button>
+                    </div>
+                </div>
+                <div style="overflow:auto;">
+                    <table id="users-table" class="historico-tabela">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Apelido</th>
+                                <th>Username</th>
+                                <th>Morada</th>
+                                <th>Email</th>
+                                <th>Telefone</th>
+                                <th>Hora de Registo</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Usuários serão inseridos aqui via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    <script src="../scripts/api-config.js"></script>
+    <script src="../scripts/admin.js"></script>
+</body>
+</html>
