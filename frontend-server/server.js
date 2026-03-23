@@ -26,10 +26,10 @@ app.use('/images', express.static(path.join(__dirname, '..', 'images')));
 app.use('/templates/assets', express.static(path.join(__dirname, '..', 'templates', 'assets'))); // if any
 
 // Pages that require authentication
-const protectedPages = new Set(['/index.html', '/categorias.html', '/historico.html', '/profile.html', '/options.html', '/despesas.html']);
+const protectedPages = new Set(['/index.html', '/categorias.html', '/historico.html', '/profile.html', '/options.html', '/despesas.html', '/transfer.html']);
 
 // protect pages
-app.get(['/', '/index.html', '/categorias.html', '/historico.html', '/profile.html', '/options.html', '/despesas.html'], async (req, res, next) => {
+app.get(['/', '/index.html', '/categorias.html', '/historico.html', '/profile.html', '/options.html', '/despesas.html', '/transfer.html'], async (req, res, next) => {
   const urlPath = req.path === '/' ? '/': req.path;
 
   // check session
