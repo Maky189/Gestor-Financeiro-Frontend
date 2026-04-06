@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +7,60 @@
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Transferência de Saldo</h1>
-        <form id="transfer-form">
-            <label for="to_username">Usuário de destino:</label>
-            <input type="text" id="to_username" name="to_username" required>
-            <label for="amount">Valor:</label>
-            <input type="number" id="amount" name="amount" min="1" required>
-            <button type="submit">Transferir</button>
-        </form>
-        <div id="transfer-result"></div>
-    </div>
-    <script src="../scripts/api-config.js"></script>
-    <script src="../scripts/transfer.js"></script>
+
+<!-- Navegação -->
+<nav class="top-nav">
+  <a href="index.html" class="nav-item">
+    <span class="nav-icon">📊</span>
+    <span class="nav-label">Dashboard</span>
+  </a>
+  <a href="conta.html" class="nav-item">
+    <span class="nav-icon">💸</span>
+    <span class="nav-label">Conta</span>
+  </a>
+  <a href="categorias.html" class="nav-item">
+    <span class="nav-icon">📁</span>
+    <span class="nav-label">Categorias</span>
+  </a>
+  <a href="historico.html" class="nav-item">
+    <span class="nav-icon">📋</span>
+    <span class="nav-label">Histórico</span>
+  </a>
+  <a href="transfer.html" class="nav-item active">
+    <span class="nav-icon">🔄</span>
+    <span class="nav-label">Transferência</span>
+  </a>
+  <a href="options.html" class="nav-item">
+    <span class="nav-icon">⚙️</span>
+    <span class="nav-label">Configurações</span>
+  </a>
+</nav>
+
+<main>
+  <section class="account-section">
+    <h2>Transferência de Saldo</h2>
+
+    <form id="transfer-form">
+      <div class="form-group">
+        <label for="to_username">Usuário de destino:</label>
+        <input type="text" id="to_username" name="to_username" placeholder="Nome do usuário" required>
+      </div>
+
+      <div class="form-group">
+        <label for="amount">Valor (esc):</label>
+        <input type="number" id="amount" name="amount" placeholder="0.00" min="1" step="0.01" required>
+      </div>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn-save">Transferir</button>
+      </div>
+    </form>
+
+    <div id="transfer-result" class="transfer-result"></div>
+  </section>
+</main>
+
+<script src="../scripts/api-config.js"></script>
+<script src="../scripts/transfer.js"></script>
 </body>
 </html>

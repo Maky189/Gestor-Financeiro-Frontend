@@ -1383,6 +1383,28 @@ background: #fff7e0;
 }
 
 /* ============================================ */
+/* RESULTADO DA TRANSFERÊNCIA */
+/* ============================================ */
+
+.transfer-result {
+  margin-top: 18px;
+  padding: 0;
+  border-radius: 14px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.transfer-result:not(:empty) {
+  padding: 16px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+}
+
+.transfer-result p {
+  margin: 4px 0;
+}
+
+/* ============================================ */
 /* PÁGINA DE EDIÇÃO DE PERFIL */
 /* ============================================ */
 
